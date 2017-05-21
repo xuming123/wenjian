@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>选项卡</title>
+	<meta charset="utf-8">
+	<style>
+   
+		div{width: 200px;height: 200px;border: 1px solid red;
+			box-sizing: border-box;}
+		span{display: block;width: 200px;height: 200px;
+      overflow: hidden;}
+	</style>
+</head>
+<body>
+<input type="button"  class="blue" value="按钮1">
+<input type="button" value="按钮2">
+<input type="button" value="按钮3">
+<span>
+<div>第一幅</div>
+<div>第二幅</div>
+<div>第三幅</div>
+</span>
+<script>
+	var inputs=document.getElementsByTagName('input')
+    var divs=document.getElementsByTagName('div')
+    for(var i=0;i<inputs.length;i++){
+    	   inputs[i].index=i;
+         inputs[i].onclick=function () {
+    for(var i=0; i < inputs.length; i++) {
+        	inputs[i].style.background="";
+        	divs[i].style.display="none"
+        	}
+      this.style.background="blue"
+      divs[this.index].style.display="block"
+        }
+
+    }
+
+</script>
+</body>
+</html>
